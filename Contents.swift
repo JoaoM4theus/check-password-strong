@@ -1,6 +1,7 @@
 import UIKit
 
 func checkPassword(_ password: String) -> Bool {
+    if password.isEmpty { return false }
     if !password.first!.isUppercase { return false }
     if password.count < 5 || password.count > 15 { return false }
     if (password.first(where: { $0.isLowercase }) == nil) { return false }
@@ -17,5 +18,5 @@ func checkPassword(_ password: String) -> Bool {
     return withoutSequence
 }
 
-let pass = "T1es2te3"
+let pass = "Te1st2e3"
 checkPassword(pass) ? print("senha forte") : print("não atende aos requisitos!")
